@@ -1,4 +1,15 @@
-export const PersonalInfoForm = () => {
+export const PersonalInfoForm = ({
+  personalInformation: { fullName, phoneNumber, email, socialLink },
+  setPersonalInformation,
+}) => {
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setPersonalInformation(prevPersonalInformation => ({
+      ...prevPersonalInformation,
+      [name]: value,
+    }));
+  };
+
   return (
     <form className="form">
       <div className="form-group">
@@ -10,6 +21,8 @@ export const PersonalInfoForm = () => {
           name="fullName"
           id="fullName"
           className="form-control"
+          value={fullName}
+          onChange={handleChange}
         />
       </div>
 
@@ -22,6 +35,8 @@ export const PersonalInfoForm = () => {
           name="phoneNumber"
           id="phoneNumber"
           className="form-control"
+          value={phoneNumber}
+          onChange={handleChange}
         />
       </div>
 
@@ -29,7 +44,14 @@ export const PersonalInfoForm = () => {
         <label htmlFor="email" className="form-label">
           E-mail
         </label>
-        <input type="email" name="email" id="email" className="form-control" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          className="form-control"
+          value={email}
+          onChange={handleChange}
+        />
       </div>
 
       <div className="form-group">
@@ -41,6 +63,8 @@ export const PersonalInfoForm = () => {
           name="socialLink"
           id="socialLink"
           className="form-control"
+          value={socialLink}
+          onChange={handleChange}
         />
       </div>
     </form>

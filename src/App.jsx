@@ -2,6 +2,7 @@ import { Collapse } from './components/Collapse';
 import { CvCreator } from './components/CvCreator';
 import { CvPreview } from './components/CvPreview';
 import { EducationalExpForm } from './components/EducationalExpForm';
+import { PreviewSection } from './components/PreviewSection';
 import { PersonalInfoForm } from './components/PersonalInfoForm';
 import { PersonalInfoHeader } from './components/PersonalInfoHeader';
 import { ProfessionalExpForm } from './components/ProfessionalExpForm';
@@ -33,6 +34,14 @@ export const App = () => {
 
       <CvPreview>
         <PersonalInfoHeader />
+
+        <PreviewSection title="Educational Experiences">
+          Educational Experiences
+        </PreviewSection>
+
+        <PreviewSection title="Professional Experiences">
+          Professional Experiences
+        </PreviewSection>
       </CvPreview>
     </div>
   );

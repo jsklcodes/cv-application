@@ -7,6 +7,7 @@ import { PersonalInfoForm } from './components/PersonalInfoForm';
 import { PersonalInfoHeader } from './components/PersonalInfoHeader';
 import { ProfessionalExpForm } from './components/ProfessionalExpForm';
 import { EducationalExpCard } from './components/EducationalExpCard';
+import { ProfessionalExpCard } from './components/ProfessionalExpCard';
 
 export const App = () => {
   return (
@@ -41,7 +42,7 @@ export const App = () => {
         </PreviewSection>
 
         <PreviewSection title="Professional Experiences">
-          Professional Experiences
+          <ProfessionalExpCard />
         </PreviewSection>
       </CvPreview>
     </div>

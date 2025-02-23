@@ -3,6 +3,7 @@ import { CvCreator } from './components/CvCreator';
 import { CvPreview } from './components/CvPreview';
 import { EducationalExpForm } from './components/EducationalExpForm';
 import { PersonalInfoForm } from './components/PersonalInfoForm';
+import { PersonalInfoHeader } from './components/PersonalInfoHeader';
 import { ProfessionalExpForm } from './components/ProfessionalExpForm';
 
 export const App = () => {
@@ -31,7 +32,7 @@ export const App = () => {
       </CvCreator>
 
       <CvPreview>
-        <p>CvPreview</p>
+        <PersonalInfoHeader />
       </CvPreview>
     </div>
   );

@@ -17,11 +17,15 @@ export const App = () => {
           <div className="experience-group">
             <EducationalExpForm />
           </div>
+
+          <button class="button button-primary">Add Experience</button>
         </Collapse>
         <Collapse title="Professional Experience">
           <div className="experience-group">
             <ProfessionalExpForm />
           </div>
+
+          <button class="button button-primary">Add Experience</button>
         </Collapse>
       </CvCreator>
     </div>

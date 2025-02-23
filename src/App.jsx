@@ -6,6 +6,7 @@ import { PreviewSection } from './components/PreviewSection';
 import { PersonalInfoForm } from './components/PersonalInfoForm';
 import { PersonalInfoHeader } from './components/PersonalInfoHeader';
 import { ProfessionalExpForm } from './components/ProfessionalExpForm';
+import { EducationalExpCard } from './components/EducationalExpCard';
 
 export const App = () => {
   return (
@@ -36,7 +37,7 @@ export const App = () => {
         <PersonalInfoHeader />
 
         <PreviewSection title="Educational Experiences">
-          Educational Experiences
+          <EducationalExpCard />
         </PreviewSection>
 
         <PreviewSection title="Professional Experiences">

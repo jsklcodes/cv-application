@@ -1,0 +1,177 @@
+/* MARK: Base styles */
+:root {
+  font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, Cantarell, Ubuntu, roboto, noto, helvetica, arial,
+    sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background-color: #c9cbdf;
+  color: #262536;
+}
+
+input,
+textarea,
+button {
+  appearance: none;
+  border: none;
+  font: inherit;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  padding: 0.6rem 1.2rem;
+}
+
+textarea {
+  resize: none;
+}
+
+/* MARK: Buttons */
+.button {
+  transition: opacity 0.3s ease;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: #5c5cc2;
+}
+
+.button-danger {
+  background-color: #f15b5b;
+}
+
+/* MARK: Typo utils */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-small {
+  font-size: 1.4rem;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+  padding-block: 10rem;
+}
+
+.container {
+  width: min(100% - 4rem, 120rem);
+  margin-inline: auto;
+}
+
+.cv-creator,
+.cv-preview {
+  background-color: #eeeeee;
+}
+
+/* MARK: Form */
+.experience-group > .form {
+  border-bottom: 0.1rem dashed #c9cbdf;
+  margin-bottom: 2.8rem;
+  padding-bottom: 3.8rem;
+}
+
+.form,
+.form-group {
+  display: grid;
+}
+
+.form {
+  gap: 1.2rem;
+}
+
+.form-group {
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.form-control {
+  box-shadow: inset 0 0 0 0.1rem #dddddd;
+}
+
+/* MARK: Section */
+.section:not(:last-child) {
+  padding-bottom: 3.2rem;
+}
+
+.section-heading {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+}
+
+/* MARK: Experience Card */
+.experience-card {
+  font-size: 1.5rem;
+}
+
+.experience-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.2rem;
+  justify-content: space-between;
+}
+
+.school-name {
+  font-weight: 600;
+}
+
+.experience-period {
+  font-style: italic;
+}
+
+.experience-group {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (width > 62rem) {
+  .app {
+    grid-template-columns: 38rem 1fr;
+  }
+
+  .cv-preview {
+    aspect-ratio: 1 / 1.414;
+  }
+}

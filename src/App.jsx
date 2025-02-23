@@ -17,6 +17,34 @@ export const App = () => {
     email: 'emily.carter@example.com',
     socialLink: 'linkedin.com/in/emilyjcarter',
   });
+  const [educationalExperiences, setEducationalExperiences] = useState([
+    {
+      id: crypto.randomUUID(),
+      schoolName: 'University of California, Berkeley',
+      degree: 'Bachelor of Science in Computer Science',
+      studyStartDate: '2016-08-13',
+      studyEndDate: '2020-05-20',
+    },
+  ]);
+
+  const addEducationalExperience = () => {
+    setEducationalExperiences(prevEducationalExperiences => [
+      ...prevEducationalExperiences,
+      {
+        id: crypto.randomUUID(),
+        schoolName: '',
+        degree: '',
+        studyStartDate: '',
+        studyEndDate: '',
+      },
+    ]);
+  };
+
+  const removeEducationalExperience = id => {
+    setEducationalExperiences(prevEducationalExperiences =>
+      prevEducationalExperiences.filter(experience => experience.id !== id)
+    );
+  };
 
   return (
     <div className="app container">
@@ -31,10 +59,22 @@ export const App = () => {
         </Collapse>
         <Collapse title="Educational Experience">
           <div className="experience-group">
-            <EducationalExpForm />
+            {educationalExperiences.map(experience => (
+              <EducationalExpForm
+                key={experience.id}
+                educationalExperience={experience}
+                setEducationalExperiences={setEducationalExperiences}
+                removeEducationalExperience={removeEducationalExperience}
+              />
+            ))}
           </div>
 
-          <button className="button button-primary">Add Experience</button>
+          <button
+            className="button button-primary"
+            onClick={addEducationalExperience}
+          >
+            Add Experience
+          </button>
         </Collapse>
         <Collapse title="Professional Experience">
           <div className="experience-group">
@@ -49,7 +89,12 @@ export const App = () => {
         <PersonalInfoHeader personalInformation={personalInformation} />
 
         <PreviewSection title="Educational Experiences">
-          <EducationalExpCard />
+          {educationalExperiences.map(experience => (
+            <EducationalExpCard
+              key={experience.id}
+              educationalExperience={experience}
+            />
+          ))}
         </PreviewSection>
 
         <PreviewSection title="Professional Experiences">

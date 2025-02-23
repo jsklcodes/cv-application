@@ -1,12 +1,16 @@
-export const EducationalExpCard = () => {
+export const EducationalExpCard = ({
+  educationalExperience: { schoolName, degree, studyStartDate, studyEndDate },
+}) => {
   return (
     <div className="experience-card">
       <header className="experience-header">
-        <span className="text-bold">University of California, Berkeley</span>
-        <span className="text-italic">August 2016 • May 2020</span>
+        <span className="text-bold">{schoolName}</span>
+        <span className="text-italic">
+          {studyStartDate} • {studyEndDate}
+        </span>
       </header>
 
-      <span>Bachelor of Science in Computer Science</span>
+      <span>{degree}</span>
     </div>
   );
 };

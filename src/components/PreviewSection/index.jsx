@@ -1,9 +1,9 @@
 export const PreviewSection = ({ title, children }) => {
   return (
-    <section class="section">
-      <h2 class="section-heading">{title}</h2>
+    <section className="section">
+      <h2 className="section-heading">{title}</h2>
 
-      <div class="experience-group">{children}</div>
+      <div className="experience-group">{children}</div>
     </section>
   );
 };

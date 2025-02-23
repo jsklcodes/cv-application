@@ -1,5 +1,6 @@
 import { Collapse } from './components/Collapse';
 import { CvCreator } from './components/CvCreator';
+import { EducationalExpForm } from './components/EducationalExpForm';
 import { PersonalInfoForm } from './components/PersonalInfoForm';
 
 export const App = () => {
@@ -12,7 +13,9 @@ export const App = () => {
           <PersonalInfoForm />
         </Collapse>
         <Collapse title="Educational Experience">
-          Educational Experience Content
+          <div className="experience-group">
+            <EducationalExpForm />
+          </div>
         </Collapse>
         <Collapse title="Professional Experience">
           Professional Experience Content

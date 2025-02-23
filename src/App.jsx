@@ -1,5 +1,6 @@
 import { Collapse } from './components/Collapse';
 import { CvCreator } from './components/CvCreator';
+import { PersonalInfoForm } from './components/PersonalInfoForm';
 
 export const App = () => {
   return (
@@ -8,7 +9,7 @@ export const App = () => {
 
       <CvCreator>
         <Collapse title="Personal Information">
-          Personal Information Content
+          <PersonalInfoForm />
         </Collapse>
         <Collapse title="Educational Experience">
           Educational Experience Content

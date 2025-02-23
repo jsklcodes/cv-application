@@ -1,5 +1,6 @@
 import { Collapse } from './components/Collapse';
 import { CvCreator } from './components/CvCreator';
+import { CvPreview } from './components/CvPreview';
 import { EducationalExpForm } from './components/EducationalExpForm';
 import { PersonalInfoForm } from './components/PersonalInfoForm';
 import { ProfessionalExpForm } from './components/ProfessionalExpForm';
@@ -28,6 +29,10 @@ export const App = () => {
           <button class="button button-primary">Add Experience</button>
         </Collapse>
       </CvCreator>
+
+      <CvPreview>
+        <p>CvPreview</p>
+      </CvPreview>
     </div>
   );
 };

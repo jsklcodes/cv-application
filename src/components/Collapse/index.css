@@ -1,0 +1,32 @@
+.collapse {
+  background-color: #ffffff;
+}
+
+.collapse-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.collapse-header:hover {
+  background-color: #f3f3f3;
+  user-select: none;
+  cursor: pointer;
+}
+
+.collapse-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.collapse-body {
+  display: none;
+  gap: 1.2rem;
+  padding: 1.2rem;
+}
+
+.collapse-body.visible {
+  display: grid;
+}

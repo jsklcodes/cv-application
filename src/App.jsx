@@ -26,6 +26,17 @@ export const App = () => {
       studyEndDate: '2020-05-20',
     },
   ]);
+  const [professionalExperiences, setProfessionalExperiences] = useState([
+    {
+      id: crypto.randomUUID(),
+      company: 'TechNova Solutions, San Francisco, CA',
+      position: 'Software Engineer',
+      jobDetails:
+        'Developed and maintained scalable web applications using Python, JavaScript, and React; Collaborated with cross-functional teams to design and implement new features; Optimized backend systems, reducing server response time by 30%; Mentored junior developers and conducted code reviews to ensure best practices.',
+      jobStartDate: '2020-07-20',
+      jobEndDate: '2025-02-23',
+    },
+  ]);
 
   const addEducationalExperience = () => {
     setEducationalExperiences(prevEducationalExperiences => [
@@ -40,9 +51,29 @@ export const App = () => {
     ]);
   };
 
+  const addProfessionalExperience = () => {
+    setProfessionalExperiences(prevProfessionalExperiences => [
+      ...prevProfessionalExperiences,
+      {
+        id: crypto.randomUUID(),
+        company: '',
+        position: '',
+        jobDetails: '',
+        jobStartDate: '',
+        jobEndDate: '',
+      },
+    ]);
+  };
+
   const removeEducationalExperience = id => {
     setEducationalExperiences(prevEducationalExperiences =>
       prevEducationalExperiences.filter(experience => experience.id !== id)
+    );
+  };
+
+  const removeProfessionalExperience = id => {
+    setProfessionalExperiences(prevProfessionalExperiences =>
+      prevProfessionalExperiences.filter(experience => experience.id !== id)
     );
   };
 
@@ -78,10 +109,22 @@ export const App = () => {
         </Collapse>
         <Collapse title="Professional Experience">
           <div className="experience-group">
-            <ProfessionalExpForm />
+            {professionalExperiences.map(experience => (
+              <ProfessionalExpForm
+                key={experience.id}
+                professionalExperience={experience}
+                setProfessionalExperiences={setProfessionalExperiences}
+                removeProfessionalExperience={removeProfessionalExperience}
+              />
+            ))}
           </div>
 
-          <button className="button button-primary">Add Experience</button>
+          <button
+            className="button button-primary"
+            onClick={addProfessionalExperience}
+          >
+            Add Experience
+          </button>
         </Collapse>
       </CvCreator>
 
@@ -98,7 +141,12 @@ export const App = () => {
         </PreviewSection>
 
         <PreviewSection title="Professional Experiences">
-          <ProfessionalExpCard />
+          {professionalExperiences.map(experience => (
+            <ProfessionalExpCard
+              key={experience.id}
+              professionalExperience={experience}
+            />
+          ))}
         </PreviewSection>
       </CvPreview>
     </div>

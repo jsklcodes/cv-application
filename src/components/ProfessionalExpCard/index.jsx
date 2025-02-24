@@ -1,19 +1,23 @@
-export const ProfessionalExpCard = () => {
+export const ProfessionalExpCard = ({
+  professionalExperience: {
+    company,
+    position,
+    jobDetails,
+    jobStartDate,
+    jobEndDate,
+  },
+}) => {
   return (
     <div className="experience-card">
       <header className="experience-header">
-        <span className="text-bold">TechNova Solutions, San Francisco, CA</span>
-        <span className="text-italic">July 2020 • Present</span>
+        <span className="text-bold">{company}</span>
+        <span className="text-italic">
+          {jobStartDate} • {jobEndDate}
+        </span>
       </header>
 
-      <span>Software Engineer</span>
-      <p className="text-small">
-        Developed and maintained scalable web applications using Python,
-        JavaScript, and React; Collaborated with cross-functional teams to
-        design and implement new features; Optimized backend systems, reducing
-        server response time by 30%; Mentored junior developers and conducted
-        code reviews to ensure best practices.
-      </p>
+      <span>{position}</span>
+      <p className="text-small">{jobDetails}</p>
     </div>
   );
 };
